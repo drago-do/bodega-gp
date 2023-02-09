@@ -25,7 +25,6 @@ export default function Menu({ activo }) {
 
   useEffect(() => {
     //Si activo === true cierra el menu
-    console.log(typeof activo);
     if (activo) {
       setPosición("0");
     } else {
