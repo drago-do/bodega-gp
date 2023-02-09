@@ -1,0 +1,18 @@
+.menu-list {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  padding-top: 10%;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--primary-background-color);
+  color: var(--text-color);
+  margin: 0;
+  box-shadow: 9px 2px 59px 25px rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: 9px 2px 59px 25px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 9px 2px 59px 25px rgba(0, 0, 0, 0.32);
+}
+.menu-list a {
+  color: var(--text-color);
+}

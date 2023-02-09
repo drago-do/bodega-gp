@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Animación de transición */
+  transition: all 0.5s ease-out;
+
+  /* Colores de CSS general */
+  --primary-background-color: #fff;
+  --secondary-background-color: #6e9e3f;
+  --text-color: #000;
+  --secondary-text-color: #fff;
+
+  @media (prefers-color-scheme: dark) {
+    --secondary-background-color: #6e9e3f;
+    --primary-background-color: #000;
+    --text-color: #fff;
+    --secondary-text-color: #fff;
+  }
+}
+
+/* Estilo de contenedores */
+.height-view {
+  height: 100vh;
+}
+.container-flex-column-center-space {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.container-flex-column-center-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.container-flex-center-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Estilos texto */
+.no-seleccionable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.Grupak-text {
+  font-weight: bolder;
+  color: var(--secondary-background-color);
+}
+
+/* Animaciones */
+.basic-circle-anim:before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: spin 0.5s infinite linear;
+  animation: spin 0.5s infinite linear;
+  border: 6px var(--secondary-background-color) solid;
+  border-left-color: var(--primary-background-color);
+  border-radius: 100%;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
