@@ -48,7 +48,7 @@ export default function Menu({ activo }) {
             />
           </ListItem>
         </Link>
-        <Link to={"/admin/bodega/add"} onClick={handleMenu}>
+        <Link to={"/admin/add"} onClick={handleMenu}>
           <ListItem>
             <ListItemAvatar>
               <Avatar>

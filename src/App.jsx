@@ -5,6 +5,7 @@ import NoPage from "./NoPage";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Bodega from "./pages/Bodega";
+import Add from "./pages/Add";
 import Info from "./pages/Info";
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="info" element={<Info />} />
         <Route path="/admin" element={<Layout />}>
           <Route path="bodega" element={<Bodega />} />
+          <Route path="add" element={<Add />} />
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="*" element={<NoPage />} />
