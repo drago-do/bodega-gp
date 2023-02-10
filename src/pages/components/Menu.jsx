@@ -61,7 +61,7 @@ export default function Menu({ activo }) {
             />
           </ListItem>
         </Link>
-        <Link to={"/info"} onClick={handleMenu}>
+        <Link to={"/admin/info"} onClick={handleMenu}>
           <ListItem>
             <ListItemAvatar>
               <Avatar>

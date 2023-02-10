@@ -30,29 +30,33 @@ export default function Layout() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Menu activo={menuActivo} />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" color="primary">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color={menuActivo ? "black" : "inherit"}
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              onClick={handleMenu}
-            >
-              {menuActivo ? <CloseIcon /> : <MenuIcon />}
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Administración bodega{" "}
-            </Typography>
-            <Button color="inherit">Cerrar Sesión</Button>
-          </Toolbar>
-        </AppBar>
-        <Outlet />
-      </Box>
-    </ThemeProvider>
+
+      <ThemeProvider theme={theme}>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static" color="primary">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color={menuActivo ? "black" : "inherit"}
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                onClick={handleMenu}
+                style={{ zIndex: "3" }}
+              >
+                {menuActivo ? <CloseIcon /> : <MenuIcon />}
+              </IconButton>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Administración bodega{" "}
+              </Typography>
+              <Button color="inherit">Cerrar Sesión</Button>
+            </Toolbar>
+          </AppBar>
+          <Outlet />
+        </Box>
+      </ThemeProvider>
+    </>
   );
 }

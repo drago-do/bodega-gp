@@ -13,10 +13,10 @@ function App() {
       <Routes>
         <Route index element={<Index />} />
         <Route path="login" element={<Login />} />
-        <Route path="info" element={<Info />} />
         <Route path="/admin" element={<Layout />}>
           <Route path="bodega" element={<Bodega />} />
           <Route path="add" element={<Add />} />
+          <Route path="info" element={<Info />} />
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="*" element={<NoPage />} />
