@@ -6,7 +6,8 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -21,8 +22,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme();
 
 export default function Add() {
-  const [seccion, setSeccion] = useState("A");
-  const [level, setLevel] = useState("1");
+  const [seccion, setSeccion] = useState("1");
+  const [level, setLevel] = useState("A");
   const [existingCategories, setExistingCategories] = useState([
     "Cables",
     "Hardware",
@@ -48,7 +49,7 @@ export default function Add() {
       unit: data.get("unit"),
       description: data.get("description"),
       id: data.get("id"),
-      working: data.get("working") === null ? false : true,
+      working: data.get("working"),
     };
     console.log(dataForm);
     verifyData(dataForm);
@@ -129,18 +130,12 @@ export default function Add() {
                   fullWidth
                   required
                 >
-                  <MenuItem value={"A"}>Sección A</MenuItem>
-                  <MenuItem value={"B"}>Sección B</MenuItem>
-                  <MenuItem value={"C"}>Sección C</MenuItem>
-                  <MenuItem value={"D"}>Sección D</MenuItem>
-                  <MenuItem value={"E"}>Sección E</MenuItem>
-                  <MenuItem value={"F"}>Sección F</MenuItem>
-                  <MenuItem value={"G"}>Sección G</MenuItem>
-                  <MenuItem value={"H"}>Sección H</MenuItem>
-                  <MenuItem value={"I"}>Sección I</MenuItem>
-                  <MenuItem value={"J"}>Sección J</MenuItem>
-                  <MenuItem value={"K"}>Sección K</MenuItem>
-                  <MenuItem value={"L"}>Sección L</MenuItem>
+                  <MenuItem value={"1"}>Sección 1</MenuItem>
+                  <MenuItem value={"2"}>Sección 2</MenuItem>
+                  <MenuItem value={"3"}>Sección 3</MenuItem>
+                  <MenuItem value={"4"}>Sección 4</MenuItem>
+                  <MenuItem value={"5"}>Sección 5</MenuItem>
+                  <MenuItem value={"6"}>Sección 6</MenuItem>
                 </Select>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -152,10 +147,10 @@ export default function Add() {
                   fullWidth
                   required
                 >
-                  <MenuItem value={"1"}>Nivel 1</MenuItem>
-                  <MenuItem value={"2"}>Nivel 2</MenuItem>
-                  <MenuItem value={"3"}>Nivel 3</MenuItem>
-                  <MenuItem value={"4"}>Nivel 4</MenuItem>
+                  <MenuItem value={"A"}>Nivel A</MenuItem>
+                  <MenuItem value={"B"}>Nivel B</MenuItem>
+                  <MenuItem value={"C"}>Nivel C</MenuItem>
+                  <MenuItem value={"D"}>Nivel D</MenuItem>
                 </Select>
               </Grid>
               <Grid item xs={12}>
@@ -218,12 +213,30 @@ export default function Add() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="true" color="primary" name="working" />
-                  }
-                  label="¿El objeto, dispositivo o componente funciona?"
-                />
+                <Typography variant="body1" gutterBottom>
+                  ¿El objeto o componente funciona?
+                </Typography>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="working"
+                >
+                  <FormControlLabel
+                    value="true"
+                    control={<Radio />}
+                    label="Si"
+                  />
+                  <FormControlLabel
+                    value="false"
+                    control={<Radio />}
+                    label="No"
+                  />
+                  <FormControlLabel
+                    value="null"
+                    control={<Radio />}
+                    label="Se desconoce"
+                  />
+                </RadioGroup>
               </Grid>
             </Grid>
             <Button
