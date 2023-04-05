@@ -18,41 +18,41 @@ export default function Secciones() {
         tiene.
       </p>
       <div className="wrapper">
-        <div id="A" className="one" onClick={handleClickSection}>
-          A
+        <div id="1" className="one" onClick={handleClickSection}>
+          Seccion 1
         </div>
-        <div id="B" className="two" onClick={handleClickSection}>
-          B
+        <div id="2" className="two" onClick={handleClickSection}>
+          Seccion 2
         </div>
-        <div id="C" className="three" onClick={handleClickSection}>
-          C
+        <div id="3" className="three" onClick={handleClickSection}>
+          Seccion 3
         </div>
-        <div id="D" className="four" onClick={handleClickSection}>
-          D
+        <div id="4" className="four" onClick={handleClickSection}>
+          Seccion 4
         </div>
-        <div id="E" className="five" onClick={handleClickSection}>
-          E
+        <div id="5" className="five" onClick={handleClickSection}>
+          Seccion 5
         </div>
-        <div id="F" className="six" onClick={handleClickSection}>
-          F
+        <div id="6" className="six" onClick={handleClickSection}>
+          Seccion 6
         </div>
-        <div id="G" className="seven" onClick={handleClickSection}>
-          G
+        <div id="7" className="seven" onClick={handleClickSection}>
+          Seccion 7
         </div>
-        <div id="H" className="eight" onClick={handleClickSection}>
-          H
+        <div id="8" className="eight" onClick={handleClickSection}>
+          Seccion 8
         </div>
-        <div id="I" className="nine" onClick={handleClickSection}>
-          I
+        <div id="9" className="nine" onClick={handleClickSection}>
+          Seccion 9
         </div>
-        <div id="J" className="ten" onClick={handleClickSection}>
-          J
+        <div id="10" className="ten" onClick={handleClickSection}>
+          Seccion 10
         </div>
-        <div id="K" className="eleven" onClick={handleClickSection}>
-          K
+        <div id="11" className="eleven" onClick={handleClickSection}>
+          Seccion 11
         </div>
-        <div id="L" className="twelve" onClick={handleClickSection}>
-          L
+        <div id="12" className="twelve" onClick={handleClickSection}>
+          Seccion 12
         </div>
       </div>
       <div>

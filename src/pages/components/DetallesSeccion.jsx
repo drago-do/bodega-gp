@@ -4,12 +4,72 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import axios from "axios";
+import { useEffect } from "react";
 
 export default function DetallesSeccion({ selectedSeccion }) {
   const [expanded, setExpanded] = React.useState(false);
+  const [dataSeccion, setDataSection] = React.useState(null);
+  const [dataLevel, setDataLevel] = React.useState(null);
+  const [dataCategory, setDataCategory] = React.useState(null);
+
+  const getAllRegisters = () => {
+    axios.get(`http://localhost:4000`).then((res) => {
+      setDataSection(res.data);
+    });
+  };
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
+  };
+
+  useEffect(() => {
+    // console.log(selectedSeccion === null);
+    // console.log(dataSeccion);
+    // selectedSeccion !== null ? getDataLevelThisSeccion() : null;
+    console.log("selectedSeccion", selectedSeccion);
+    dataSeccion === null ? getAllRegisters() : null;
+    getDataLevelThisSeccion();
+  }, [selectedSeccion]);
+
+  const getDataCategory =() =>{
+    if (dataSeccion) {
+      //Guarda en un array todas las categorías de la seccion seleccionada
+      let categories = [];
+      for (const element in dataSeccion) {
+        if (dataSeccion[element].seccion === selectedSeccion) {
+          categories.push(dataSeccion[element].categoria);
+        }
+      }
+      console.log("All categories", categories);
+      //Elimina los valores repetidos del array
+      categories = [...new Set(categories)];
+      console.log("UnOrder categories", categories);
+      //Ordena alfabeticamente los valores del array
+      categories.sort();
+      console.log("categories", categories);
+      setDataCategory(categories);
+    }
+  }
+
+  const getDataLevelThisSeccion = () => {
+    if (dataSeccion) {
+      //Guarda en un array todos los niveles de la seccion seleccionada
+      let levels = [];
+      for (const element in dataSeccion) {
+        if (dataSeccion[element].seccion === selectedSeccion) {
+          levels.push(dataSeccion[element].nivel);
+        }
+      }
+      console.log("All levels", levels);
+      //Elimina los valores repetidos del array
+      levels = [...new Set(levels)];
+      console.log("UnOrder Levels", levels);
+      //Ordena alfabeticamente los valores del array
+      levels.sort();
+      console.log("levels", levels);
+      setDataLevel(levels);
+    }
   };
 
   return (
